@@ -1,5 +1,13 @@
-export const slices = {};
+import playersSlice, { playersActions, playersInitialState } from "./players";
 
-export const actions = {};
+export const slices = {
+  players: playersSlice.reducer,
+};
 
-export const initialState = {};
+export const actions = {
+  players: playersActions,
+};
+
+export const initialState = {
+  players: playersInitialState,
+};

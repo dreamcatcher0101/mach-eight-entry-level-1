@@ -2,8 +2,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import httpStatus from "http-status";
 
-import { PATH } from "../consts";
-
 const SERVER_BASE_URL = process.env.SERVER_BASE_URL || "http://localhost:8080";
 
 const Request = async (
@@ -21,8 +19,6 @@ const Request = async (
 
     if (isAPI) {
       requestURL = `${SERVER_BASE_URL}/api/v1/${requestURL}`;
-    } else {
-      requestURL = `${SERVER_BASE_URL}/${requestURL}`;
     }
 
     if (isTokenIncluded) {
