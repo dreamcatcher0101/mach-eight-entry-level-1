@@ -1,4 +1,4 @@
 import Request from "./request";
-import searchMatchedPlayers from "./searchMatchedPlayers";
+import getMatchedPlayers from "./getMatchedPlayers";
 
-export { Request, searchMatchedPlayers };
+export { Request, getMatchedPlayers };

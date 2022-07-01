@@ -1,5 +1,5 @@
 import LoadingComponent from "./Loading";
-import PlayerComponent from "./Player";
+import MatchPlayersComponent from "./MatchPlayers";
 import SearchInputComponent from "./SearchInput";
 
-export { LoadingComponent, PlayerComponent, SearchInputComponent };
+export { LoadingComponent, MatchPlayersComponent, SearchInputComponent };
