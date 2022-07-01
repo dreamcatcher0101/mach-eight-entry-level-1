@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { LoadingComponent } from "../Common";
+import { LoadingComponent, SearchInputComponent } from "../Common";
 
 import { sagaActions } from "../../redux";
 
@@ -11,17 +11,25 @@ const DashboardComponent = () => {
   const players = useSelector((state) => state.players.data);
   const loading = useSelector((state) => state.players.loading);
 
+  const [totalHeight, setTotalHeight] = useState(0);
+
+  const matchedPlayers = useMemo(() => {
+    return players;
+  }, [players, totalHeight]);
+
   useEffect(() => {
     dispatch(sagaActions.players.getPlayers({}));
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log("players:", players);
-  }, [players]);
+  const onSearchMatchedPlayers = (totalHeight) => {
+    alert(totalHeight);
+  };
 
   return (
     <>
-      <div className="text-3xl text-center mt-5">Welcome to Dashboard!!!</div>
+      <div className="flex justify-center">
+        <SearchInputComponent search={onSearchMatchedPlayers} />
+      </div>
       {loading && <LoadingComponent />}
     </>
   );
